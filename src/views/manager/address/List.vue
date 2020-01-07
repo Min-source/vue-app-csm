@@ -10,6 +10,7 @@
     </briup-fulllayout>
 </template>
 <script>
+
 import {get} from "../../../http/axios";
 import {mapState} from "vuex";
 export default {
@@ -35,7 +36,7 @@ export default {
             })
         },
         toAddressEditHandler(){
-            //编程跳转
+            //编程页面跳转
             this.$router.push("/manager/address_edit")
         }
     }    

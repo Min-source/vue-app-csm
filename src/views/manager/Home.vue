@@ -13,13 +13,12 @@
       :icon="value.icon"
       :text="value.name"/>
     </van-grid>
-    <van-grid :column-num="1" icon-size="400px"> 
-      <van-grid-item
-      v-for="value in products"
-      :key="value.id"
-      :icon="value.photo"
-      :text="value.name"/>
-    </van-grid>
+    <briup-product-item
+      @click="toBuyHandler(p)"
+      v-for="p in products"
+      :key="p.id"
+      :data="p">
+      </briup-product-item>
     </div>
   </div>
 </template>
@@ -50,9 +49,16 @@ export default {
       post(url,params).then((response)=>{
         this.products=response.data.list.slice(0,4);
       })
+    },
+    toBuyHandler(p){
+      // alert(JSON.stringify(p));
+      this.$router.push({
+        path:"/manager/order_confirm",
+        query:p
+      })
     }
 
-    
+
   }
 }
 </script>
