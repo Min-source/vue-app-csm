@@ -4,7 +4,9 @@
       <van-cell
       v-for="item in addresses"
       :key="item.id"
-      :title="item.province+' '+item.city+' '+item.area+'  '+item.address"/>
+      :title="item.province+' '+item.city+' '+item.area+'  '+item.address"
+      label="点击修改或删除"
+      @click="updateHandler(item)"/>
     </van-list>
     <van-button block type="default" @click="toAddressEditHandler">添加</van-button>
     </briup-fulllayout>
@@ -38,6 +40,12 @@ export default {
         toAddressEditHandler(){
             //编程页面跳转
             this.$router.push("/manager/address_edit")
+        },
+        updateHandler(p){
+            this.$router.push({
+            path:"/manager/change",
+            query:p
+            })
         }
     }    
 }

@@ -6,10 +6,6 @@
     </van-row>
     <van-row>
       <van-col :span="24" :offset="1">
-        <!-- <div v-if="data.waiter!=null">员工姓名：
-          {{data.waiter.realname}}</div>
-        <div v-if="data.waiter!=null">联系方式：
-          {{data.waiter.telephone}}</div> -->
         <div v-if="data.orderLines != null">服务：
           <span 
             v-for="line in data.orderLines"
